@@ -6,17 +6,17 @@ distribution_mapper_config: []
 policy:
   _target_: maze.perception.models.policies.ProbabilisticPolicyComposer
   networks:
-  - _target_: tutorials.tutorial_maze_env.part06_struct_env.models.actor.SelectionPolicyNet
+  - _target_: tutorial_maze_env.part06_struct_env.models.actor.SelectionPolicyNet
     non_lin: torch.nn.ReLU
     with_mask: true
-  - _target_: tutorials.tutorial_maze_env.part06_struct_env.models.actor.CuttingPolicyNet
+  - _target_: tutorial_maze_env.part06_struct_env.models.actor.CuttingPolicyNet
     non_lin: torch.nn.ReLU
     with_mask: true
 
 critic:
   _target_: maze.perception.models.critics.StepStateCriticComposer
   networks:
-    - _target_: tutorials.tutorial_maze_env.part06_struct_env.models.critic.SelectionValueNet
+    - _target_: tutorial_maze_env.part06_struct_env.models.critic.SelectionValueNet
       non_lin: torch.nn.ReLU
-    - _target_: tutorials.tutorial_maze_env.part06_struct_env.models.critic.CuttingValueNet
+    - _target_: tutorial_maze_env.part06_struct_env.models.critic.CuttingValueNet
       non_lin: torch.nn.ReLU
